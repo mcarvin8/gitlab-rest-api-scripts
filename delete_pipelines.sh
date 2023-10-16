@@ -1,7 +1,7 @@
 #!/bin/bash
 # Create a HTTPS Token in your Personal Account with "api" scope
 # Do NOT store this token in version control
-TOKEN=update-me
+TOKEN=$PERSONAL_TOKEN
 while read b; do
     echo "Attemping to delete pipeline ID $b"
     curl --header "PRIVATE-TOKEN: ${TOKEN}" --request "DELETE" "$b"

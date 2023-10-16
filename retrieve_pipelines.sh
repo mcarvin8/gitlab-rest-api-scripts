@@ -13,7 +13,7 @@ json_file="pipelines.json"
 gitlab_server=""
 # Create a HTTPS Token in your Personal Account with "api" scope
 # Do NOT store this token in version control
-TOKEN=update-me
+TOKEN=$PERSONAL_TOKEN
 
 while true; do
     response=$(curl --header "PRIVATE-TOKEN: ${TOKEN}" "https://${gitlab_server}/api/v4/projects/${project_id}/pipelines?ref=${ref_name}&updated_before=${updated_before}T00:00:00Z&page=$page&per_page=$per_page")
